@@ -95,8 +95,7 @@ new TypeIt("#typeTarget", {
   .go();
 </script>
   <script type="module">
-    import transNameiso from "./transNameiso.js";
-    import countryMap from "./countryMap.js";
+    import transnameiso from "./transnameiso.js";
     document.getElementById("nameInput").onsubmit = function () {
       const userName = this.name.value;
       this.name.value = "";
@@ -127,7 +126,7 @@ new TypeIt("#typeTarget", {
                   <tbody>
                     <tr>
                       <th scope="row">1</th>
-                      <td>${transNameiso(userCountry[0].country_id)}(${userCountry[0].country_id})</td>
+                      <td>${transnameiso(userCountry[0].country_id)}(${userCountry[0].country_id})</td>
                       <td>${
                         Math.round(
                           (userCountry[0].probability * 100 + Number.EPSILON) *
@@ -137,7 +136,7 @@ new TypeIt("#typeTarget", {
                     </tr>
                     <tr>
                       <th scope="row">2</th>
-                      <td>${transNameiso(userCountry[1].country_id)}(${userCountry[1].country_id})</td>
+                      <td>${transnameiso(userCountry[1].country_id)}(${userCountry[1].country_id})</td>
                       <td>${
                         Math.round(
                           (userCountry[1].probability * 100 + Number.EPSILON) *
@@ -147,7 +146,7 @@ new TypeIt("#typeTarget", {
                     </tr>
                     <tr>
                       <th scope="row">3</th>
-                      <td>${transNameiso(userCountry[2].country_id)}(${userCountry[2].country_id})</td>
+                      <td>${transnameiso(userCountry[2].country_id)}(${userCountry[2].country_id})</td>
                       <td>${
                         Math.round(
                           (userCountry[2].probability * 100 + Number.EPSILON) *
@@ -160,12 +159,12 @@ new TypeIt("#typeTarget", {
               `;
             const resultTemplet2 = `
               <p><b>${userName}</b>는(은)
-              <b>${transNameiso(
+              <b>${transnameiso(
                 userCountry[0].country_id
               )}</b>에서 쓰였습니다!</p>
-              그 외에는 <b>${transNameiso(
+              그 외에는 <b>${transnameiso(
                 userCountry[1].country_id
-              )}</b>,<b>${transNameiso(
+              )}</b>,<b>${transnameiso(
               userCountry[2].country_id
             )}</b> 이 있습니다!</p>
               `;

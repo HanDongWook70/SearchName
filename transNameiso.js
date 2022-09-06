@@ -1,4 +1,4 @@
-export default function transNameiso(userNameCountry) {
+export default function transnameiso(userNameCountry) {
   switch (userNameCountry) {
     case "GH":
       return "가나";
