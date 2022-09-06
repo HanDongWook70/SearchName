@@ -126,7 +126,7 @@ new TypeIt("#typeTarget", {
                   <tbody>
                     <tr>
                       <th scope="row">1</th>
-                      <td>${transnameiso(userCountry[0].country_id)}(${userCountry[0].country_id})</td>
+                      <td>${transNameiso(userCountry[0].country_id)}(${userCountry[0].country_id})</td>
                       <td>${
                         Math.round(
                           (userCountry[0].probability * 100 + Number.EPSILON) *
@@ -136,7 +136,7 @@ new TypeIt("#typeTarget", {
                     </tr>
                     <tr>
                       <th scope="row">2</th>
-                      <td>${transnameiso(userCountry[1].country_id)}(${userCountry[1].country_id})</td>
+                      <td>${transNameiso(userCountry[1].country_id)}(${userCountry[1].country_id})</td>
                       <td>${
                         Math.round(
                           (userCountry[1].probability * 100 + Number.EPSILON) *
@@ -146,7 +146,7 @@ new TypeIt("#typeTarget", {
                     </tr>
                     <tr>
                       <th scope="row">3</th>
-                      <td>${transnameiso(userCountry[2].country_id)}(${userCountry[2].country_id})</td>
+                      <td>${transNameiso(userCountry[2].country_id)}(${userCountry[2].country_id})</td>
                       <td>${
                         Math.round(
                           (userCountry[2].probability * 100 + Number.EPSILON) *
@@ -159,12 +159,12 @@ new TypeIt("#typeTarget", {
               `;
             const resultTemplet2 = `
               <p><b>${userName}</b>는(은)
-              <b>${transnameiso(
+              <b>${transNameiso(
                 userCountry[0].country_id
               )}</b>에서 쓰였습니다!</p>
-              그 외에는 <b>${transnameiso(
+              그 외에는 <b>${transNameiso(
                 userCountry[1].country_id
-              )}</b>,<b>${transnameiso(
+              )}</b>,<b>${transNameiso(
               userCountry[2].country_id
             )}</b> 이 있습니다!</p>
               `;
