@@ -107,13 +107,13 @@ new TypeIt("#typeTarget", {
           console.log(userCountry);
           if (userCountry.length == 0) {
             const resultTemplet3 = `
-              <p>${userName}는(은)
+              <p><b>${userName}</b>는(은)
               데이터에 인구수가 너무 적어 결과가 없습니다!</p>
           `;
-            document.querySelector("#resultSection1").innerHTML =
+            document.querySelector("#resultSection2").innerHTML =
               resultTemplet3;
-            document.getElementById("resultSection1").classList.remove('visually-hidden');
-            document.querySelector("#resultSection2").innerHTML = "";
+            document.getElementById("resultSection2").classList.remove('visually-hidden');
+            document.querySelector("#resultSection1").innerHTML = "";
           } else {
             const resultTemplet1 = `
               <table class="table">
