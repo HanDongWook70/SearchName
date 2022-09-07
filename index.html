@@ -45,8 +45,7 @@
         <div class="visually-hidden container-fluid" id="resultSection2"></div>
         <p></p>
         <div class="visually-hidden container-fluid" id="resultSection1"></div>
-        
-        
+        <div id="shareBottonGroup"class="container-fluid">
     </article>
   </div>
   </body>
@@ -94,7 +93,8 @@ new TypeIt("#typeTarget", {
   .type(`내 외국 이름이 어디에서 </br> 사용되는지 검색해보세요`, { delay: 100 })
   .go();
 </script>
-  <script type="module">
+
+<script type="module">
     import transNameiso from "https://handongwook70.github.io/SearchName/transNameiso.js";
     document.getElementById("nameInput").onsubmit = function () {
       const userName = this.name.value;
@@ -104,7 +104,6 @@ new TypeIt("#typeTarget", {
         .then((data) => data.country)
         .then((country) => {
           const userCountry = country;
-          console.log(userCountry);
           if (userCountry.length == 0) {
             const resultTemplet3 = `
               <p><b>${userName}</b>는(은)
@@ -114,6 +113,88 @@ new TypeIt("#typeTarget", {
               resultTemplet3;
             document.getElementById("resultSection2").classList.remove('visually-hidden');
             document.querySelector("#resultSection1").innerHTML = "";
+          } else if (userCountry.length == 1){
+            const resultTemplet1 = `
+              <table class="table">
+                  <tread>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">나라 이름</th>
+                      <th scope="col">국적 가능성(%)</th>
+                    </tr>
+                  </tread>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>${transNameiso(userCountry[0].country_id)}(${userCountry[0].country_id})</td>
+                      <td>${
+                        Math.round(
+                          (userCountry[0].probability * 100 + Number.EPSILON) *
+                            100
+                        ) / 100
+                      }</td>
+                    </tr>
+                  </tbody>
+                </table>
+              `;
+            const resultTemplet2 = `
+              <p><b>${userName}</b>는(은)
+              <b>${transNameiso(
+                userCountry[0].country_id
+              )}</b>에서 쓰였습니다!
+              `;
+            document.querySelector("#resultSection1").innerHTML =
+              resultTemplet1;
+            document.querySelector("#resultSection2").innerHTML =
+              resultTemplet2;
+            document.getElementById("resultSection1").classList.remove('visually-hidden');
+            document.getElementById("resultSection2").classList.remove('visually-hidden');
+          }else if (userCountry.length == 2){
+            const resultTemplet1 = `
+              <table class="table">
+                  <tread>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">나라 이름</th>
+                      <th scope="col">국적 가능성(%)</th>
+                    </tr>
+                  </tread>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>${transNameiso(userCountry[0].country_id)}(${userCountry[0].country_id})</td>
+                      <td>${
+                        Math.round(
+                          (userCountry[0].probability * 100 + Number.EPSILON) *
+                            100
+                        ) / 100
+                      }</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>${transNameiso(userCountry[1].country_id)}(${userCountry[1].country_id})</td>
+                      <td>${
+                        Math.round(
+                          (userCountry[1].probability * 100 + Number.EPSILON) *
+                            100
+                        ) / 100
+                      }</td>
+                    </tr>
+                  </tbody>
+                </table>
+              `;
+            const resultTemplet2 = `
+              <p><b>${userName}</b>는(은)
+              <b>${transNameiso(
+                userCountry[0].country_id
+              )}</b>에서 쓰였습니다!
+              `;
+            document.querySelector("#resultSection1").innerHTML =
+              resultTemplet1;
+            document.querySelector("#resultSection2").innerHTML =
+              resultTemplet2;
+            document.getElementById("resultSection1").classList.remove('visually-hidden');
+            document.getElementById("resultSection2").classList.remove('visually-hidden');
           } else {
             const resultTemplet1 = `
               <table class="table">
