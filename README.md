@@ -8,3 +8,5 @@ Please enjoy the process of searching the nationality of your name!
 And if you like the web page, please share it with many people!
 This page is being tracked by GA, and if there are many foreign users, I will also make an English website.
 Additionally, services such as vanta/typeit were used.
+
+If you have any ideas or find any bugs, please contact us at greenjames0710@gmail.com.

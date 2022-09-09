@@ -600,6 +600,15 @@ export default function transNameiso(userNameCountry) {
     case "TW":
       return "대만";
       break;
+    case "TW":
+      return "대만";
+      break;
+    case "MP":
+      return "북마리아나 제도";
+      break;
+    case "PR":
+      return "푸에르토리코";
+      break;
     default:
       return userNameCountry;
   }
