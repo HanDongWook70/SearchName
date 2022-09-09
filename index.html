@@ -113,7 +113,6 @@ new TypeIt("#typeTarget", {
     import transNameiso from "https://koreandev.github.io/SearchName/transNameiso.js";
     document.getElementById("nameInput").onsubmit = function () {
       const userName = this.name.value;
-      this.name.value = "";
       fetch(`https://api.nationalize.io?name=${userName}`)
         .then((response) => response.json())
         .then((data) => data.country)
